@@ -23,6 +23,7 @@ app.use(errorMiddleware)
 const start = async () => {
 
   try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(process.env.DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true
